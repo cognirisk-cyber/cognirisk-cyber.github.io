@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>
+  (function () {
+    try {
+      var raiz = document.documentElement;
+      var classes = [];
+      var apresentando = location.search.indexOf('apresentar=1') >= 0;
+      var t = localStorage.getItem('theme');
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      if (apresentando) { t = 'light'; classes.push('presenting'); }
+      raiz.setAttribute('data-theme', t);
+      raiz.classList.toggle('light-mode', t === 'light');
+      if (!apresentando && localStorage.getItem('vant:menu') === 'recolhido') {
+        classes.push('nav-collapsed');
+      }
+      if (classes.length) raiz.setAttribute('data-bodyclass', classes.join(' '));
+    } catch (e) {}
+  })();
+</script>
+<link rel="stylesheet" href="static/css/vant.css?v=368fed3a">
+  <link rel="icon" href="static/img/favicon-cognirisk.ico?v=e503b172" sizes="any">
+  <link rel="apple-touch-icon" href="static/img/cognirisk-apple-touch.png?v=10c7b1d9">
+  <title>CogniRisk · VANT, segurança da informação e governança</title>
+  <meta name="description" content="O VANT, da CogniRisk, reúne controles, vulnerabilidades, pentest, acessos e incidentes de cibersegurança num só lugar, com o nome de quem fez e a data, separados por empresa.">
+</head>
+<body class="vitrine">
+<header class="vit-topo">
+  <div class="vit-caixa vit-topo-int">
+    <a class="vit-marca" href="./">
+      <img src="static/img/cognirisk-logo-dark.png?v=e9b4d55e" alt="CogniRisk" width="1200" height="357">
+    </a>
+    <a class="vit-entrar" href="#vant">Conhecer</a>
+  </div>
+</header>
+<main>
+  <section class="vit-abertura" aria-labelledby="vit-titulo">
+    <div class="vit-caixa vit-abertura-grade">
+      <p class="vit-sobretitulo">Segurança da informação e governança</p>
+      <h1 class="vit-titulo" id="vit-titulo"><span class="vit-oracao">Cibersegurança <span class="vit-realce">sob controle</span>,</span> <span class="vit-oracao">da operação à diretoria.</span></h1>
+      <div class="vit-abertura-texto">
+        <p class="vit-lede">O VANT, da CogniRisk, reúne a cibersegurança da empresa num só lugar: controles, vulnerabilidades, pentest, acessos e incidentes. <span class="vit-lede-forte">O controle executado, o requisito respondido e o risco aceito</span> ficam com o nome de quem fez e a data.</p>
+        <div class="vit-acoes">
+          <a class="vit-botao" href="#vant">Conhecer o VANT</a>
+          <a class="vit-botao-2" href="#contratacao">Ver o que se contrata</a>
+        </div>
+        <div class="vit-legenda">
+          <p class="vit-rotulo">No exemplo ao lado</p>
+          <ul>
+            <li><b>Quem executou e quem aprovou</b>, cada um com data e hora, e a evidência anexada.</li>
+            <li><b>O risco residual</b>, calculado a partir dos controles homologados e comparado ao apetite.</li>
+            <li><b>O período fechado</b>: reabrir fica na trilha, com quem tinha fechado e quando.</li>
+          </ul>
+        </div>
+      </div>
+      <figure class="vit-dossie" role="img"
+              aria-label="Exemplo de registro no VANT: um controle executado por uma área e aprovado por outra, com data e hora, a trilha de auditoria, o risco residual dentro do apetite na Matriz RAS e um período fechado no Controle de Regras.">
+        <div class="vit-folha">
+          <div class="vit-folha-cab">
+            <img src="static/img/vant-logo-dark.png?v=7cbcf3e8" alt="" width="256" height="256">
+            <span class="vit-rotulo">Autoavaliação de controles</span>
+            <span class="vit-mono"><span class="vit-so-largo">Competência </span>09/2026</span>
+          </div>
+          <div class="vit-folha-corpo">
+            <div class="vit-folha-id">
+              <span class="vit-mono">CYB-IAM-01</span>
+              <span class="vit-estado vit-estado-ok">Homologado</span>
+            </div>
+            <p class="vit-folha-tit">Contas privilegiadas cobertas pelo cofre de senhas</p>
+            <dl class="vit-campos">
+              <div><dt class="vit-rotulo">Resultado</dt><dd>98,4% <span>· 123 de 125 contas</span></dd></div>
+              <div><dt class="vit-rotulo">Evidência</dt><dd class="vit-arquivo">relatorio-cofre-2026-09.pdf</dd></div>
+            </dl>
+            <div class="vit-assinaturas">
+              <div class="vit-assinatura">
+                <span class="vit-assinatura-nome">Segurança</span>
+                <span class="vit-rotulo">Executado por</span>
+                <span class="vit-mono">07/10/2026 16:42</span>
+              </div>
+              <div class="vit-assinatura">
+                <span class="vit-assinatura-nome">Governança</span>
+                <span class="vit-rotulo">Aprovado por</span>
+                <span class="vit-mono">09/10/2026 09:15</span>
+              </div>
+            </div>
+          </div>
+          <div class="vit-trilha">
+            <span class="vit-rotulo">Trilha</span>
+            <ol>
+              <li><span class="vit-mono">09/10 09:15</span><span>Governança</span><span>homologou o ciclo</span></li>
+              <li><span class="vit-mono">07/10 16:42</span><span>Segurança</span><span>anexou a evidência</span></li>
+              <li><span class="vit-mono">07/10 16:40</span><span>Segurança</span><span>executou o controle</span></li>
+            </ol>
+          </div>
+        </div>
+        <div class="vit-lado">
+          <div class="vit-cartao vit-matriz">
+            <div class="vit-cartao-cab"><span class="vit-rotulo">Matriz RAS</span><span class="vit-mono">RC-02</span></div>
+            <p class="vit-cartao-tit">Identidades e privilégios</p>
+            <div class="vit-mapa">
+              <span class="vit-mapa-ty">Impacto</span>
+              <ol class="vit-mapa-ey"><li>5</li><li>4</li><li>3</li><li>2</li><li>1</li></ol>
+              <div class="vit-mapa-cel">
+                <span class="vit-mapa-n1"></span><span class="vit-mapa-n2"></span><span class="vit-mapa-n3"></span><span class="vit-mapa-n4 vit-mapa-inerente"></span><span class="vit-mapa-n4"></span>
+                <span class="vit-mapa-n1"></span><span class="vit-mapa-n2"></span><span class="vit-mapa-n2"></span><span class="vit-mapa-n3"></span><span class="vit-mapa-n4"></span>
+                <span class="vit-mapa-n1"></span><span class="vit-mapa-n1"></span><span class="vit-mapa-n2"></span><span class="vit-mapa-n2"></span><span class="vit-mapa-n3"></span>
+                <span class="vit-mapa-n1"></span><span class="vit-mapa-n1"></span><span class="vit-mapa-n1"></span><span class="vit-mapa-n2"></span><span class="vit-mapa-n2"></span>
+                <span class="vit-mapa-n1"></span><span class="vit-mapa-n1"></span><span class="vit-mapa-n1"></span><span class="vit-mapa-n1"></span><span class="vit-mapa-n1"></span>
+              </div>
+              <ol class="vit-mapa-ex"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ol>
+              <span class="vit-mapa-tx">Probabilidade</span>
+            </div>
+            <div class="vit-matriz-leitura">
+              <div class="vit-regua">
+                <div class="vit-regua-trilho">
+                  <span class="vit-regua-abate"></span>
+                  <span class="vit-regua-apetite"></span>
+                  <span class="vit-regua-ine"></span>
+                  <span class="vit-regua-res"></span>
+                </div>
+                <dl class="vit-regua-leg">
+                  <div><dt><span class="vit-sim-ine"></span>Inerente</dt><dd>4,17</dd></div>
+                  <div><dt><span class="vit-sim-res"></span>Residual</dt><dd>1,70</dd></div>
+                  <div><dt><span class="vit-sim-ape"></span>Apetite</dt><dd>2,00</dd></div>
+                </dl>
+              </div>
+              <span class="vit-estado vit-estado-ok">Dentro do apetite</span>
+            </div>
+          </div>
+          <div class="vit-selo">
+            <span class="vit-rotulo">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 7V5a4 4 0 1 1 8 0v2h1v8H3V7h1zm2 0h4V5a2 2 0 1 0-4 0v2z"/></svg>
+              Controle de Regras
+            </span>
+            <span class="vit-selo-tit">Período fechado</span>
+            <span class="vit-selo-per">09/2026</span>
+            <span class="vit-selo-quem">Governança · 11/10/2026 18:03</span>
+          </div>
+        </div>
+      </figure>
+    </div>
+  </section>
+  <div class="vit-numeros">
+    <ul class="vit-caixa vit-numeros-lista">
+      <li class="vit-numero"><strong>40</strong><span><b>telas</b>, cada uma revogável pessoa a pessoa</span></li>
+      <li class="vit-numero"><strong>6</strong><span><b>módulos contratáveis</b> sobre um núcleo que vem em todo contrato</span></li>
+      <li class="vit-numero"><strong>1 <small>schema</small></strong><span>de banco de dados <b>por empresa</b></span></li>
+    </ul>
+  </div>
+  <section class="vit-secao vit-numerada" id="vant" aria-labelledby="tit-vant">
+    <div class="vit-caixa vit-secao-grade">
+      <div class="vit-trilho">
+        <div class="vit-trilho-fixo">
+          <p class="vit-num" aria-hidden="true"></p>
+          <h2 class="vit-h2 vit-h2-marca" id="tit-vant">
+            <img src="static/img/vant-logo-dark.png?v=7cbcf3e8" alt="" width="256" height="256">
+            VANT
+          </h2>
+          <p class="vit-sub">O que fica registrado, e em nome de quem</p>
+          <div class="vit-cartao vit-requisito" role="img"
+               aria-label="Exemplo de requisito respondido na Conformidade: ISO/IEC 27001:2022, controle A.5.15, com a evidência anexada, a validade e a área e a data de quem respondeu.">
+            <div class="vit-cartao-cab"><span class="vit-rotulo">Conformidade</span><span class="vit-mono">ISO/IEC 27001:2022</span></div>
+            <p class="vit-cartao-tit"><span class="vit-mono">A.5.15</span> Controle de acesso</p>
+            <dl class="vit-campos">
+              <div><dt class="vit-rotulo">Evidência</dt><dd class="vit-arquivo">politica-de-acesso-v4.pdf</dd></div>
+              <div><dt class="vit-rotulo">Validade</dt><dd>até 01/04/2027</dd></div>
+            </dl>
+            <div class="vit-assinatura">
+              <span class="vit-assinatura-nome">Conformidade</span>
+              <span class="vit-rotulo">Respondido por</span>
+              <span class="vit-mono">04/10/2026 11:20</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vit-corpo">
+        <ol class="vit-livro">
+          <li class="vit-livro-item">
+            <h3>Normas, requisito a requisito</h3>
+            <p>Cada resposta a um requisito leva o nome de quem a deu e a data, e o arquivo que a comprova fica anexado com prazo de validade. Só a gestão pode tirar um requisito da conta, como não aplicável ou removido.</p>
+          </li>
+          <li class="vit-livro-item">
+            <h3>Autoavaliação dos controles</h3>
+            <p>A área executa cada controle no período dele, dentro do prazo que a empresa define, e anexa a evidência ou a nota de execução. A homologação aprova ou devolve com motivo, e o histórico exportado traz a conta de cada número, com quem executou e quem aprovou.</p>
+          </li>
+          <li class="vit-livro-item">
+            <h3>Risco para a diretoria</h3>
+            <p>A Matriz RAS calcula o risco residual a partir dos controles homologados e compara com o apetite de cada risco. Uma visão explica, controle a controle, por que a nota mudou entre dois meses, e os cenários mostram o que muda se um controle melhorar.</p>
+          </li>
+          <li class="vit-livro-item">
+            <h3>Do apontamento ao encerramento</h3>
+            <p>O apontamento do auditor ou do regulador entra com o texto original e o prazo cobrado. Cada ação com dono vira cartão no quadro de quem a executa e volta concluída com nome e data. Quem encerra é a Governança, e quem respondeu por uma ação não pode validá-la.</p>
+          </li>
+          <li class="vit-livro-item">
+            <h3>Terceiros</h3>
+            <p>O fornecedor responde o questionário de segurança por um link, sem conta no portal, com as perguntas congeladas no envio, e só consegue enviar com todas respondidas. Cada avaliação mostra as respostas por trás da nota, e certificados e laudos do terceiro ficam num cofre com validade.</p>
+          </li>
+          <li class="vit-livro-item">
+            <h3>Regras das ferramentas</h3>
+            <p>Cada regra que a empresa diz ter ligada, no DLP ou no firewall, pede a cada período o anexo e o visto de quem conferiu, ou a justificativa de quem não conseguiu. Regra nova de DLP passa pelo gestor e pela auditoria, e quem pediu não aprova.</p>
+          </li>
+          <li class="vit-livro-item">
+            <h3>Pentest no Codex</h3>
+            <p>A severidade que a empresa de pentest deu fica ao lado da adotada, e o CVSS é recalculado do vetor. Risco aceito e falso positivo exigem justificativa e aprovação da gestão, e a cobertura aponta o alvo que nunca foi testado.</p>
+          </li>
+          <li class="vit-livro-item">
+            <h3>Incidentes</h3>
+            <p>A ficha registra tipo, severidade, natureza dos dados expostos e causa raiz. O comunicado sai em PDF com a marca da empresa e por e-mail, com prévia antes do envio.</p>
+          </li>
+          <li class="vit-livro-item">
+            <h3>Ciclo de vida de acesso</h3>
+            <p>Admissão, afastamento, transferência e desligamento no Active Directory e no Microsoft 365, a partir da fila do Freshservice e da base de RH. Nenhuma conta é tocada até a empresa liberar a execução real, fluxo a fluxo, e o desligamento guarda os grupos da pessoa antes de tirá-los, para poder reverter.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+  <section class="vit-faixa vit-numerada" id="prova" aria-labelledby="tit-prova">
+    <div class="vit-caixa vit-secao-grade">
+      <div class="vit-trilho">
+        <div class="vit-trilho-fixo">
+          <p class="vit-num" aria-hidden="true"></p>
+          <h2 class="vit-h2" id="tit-prova">O que sustenta a prova</h2>
+          <p class="vit-sub">Por que o registro se sustenta</p>
+        </div>
+      </div>
+      <div class="vit-corpo">
+        <ol class="vit-clausulas">
+          <li class="vit-clausula">
+            <h3>Cada empresa no próprio schema</h3>
+            <p>Os dados de cada empresa ficam num schema próprio do banco de dados. Um teste povoa duas empresas e confere, modelo a modelo, que uma não lê o dado da outra; a lista de modelos sai do próprio sistema, e o que for criado amanhã entra sozinho.</p>
+          </li>
+          <li class="vit-clausula">
+            <h3>Segregação de funções</h3>
+            <p>Na aprovação de política, no aceite de risco, na validação de plano de ação e na mudança de permissão, o portal recusa a mesma pessoa nas duas pontas.</p>
+          </li>
+          <li class="vit-clausula">
+            <h3>Arquivo restrito só sai pela tela</h3>
+            <p>Relatórios de pentest, anexos de FAP e as evidências de Conformidade, Controle de Regras, Fornecedores e DLP ficam fora da área servida pela web, numa pasta por empresa. Só saem pela tela do módulo, que confere o acesso e registra o download.</p>
+          </li>
+          <li class="vit-clausula">
+            <h3>Acesso por pessoa, com autor</h3>
+            <p>Tela de módulo não contratado não abre, nem por concessão nominal. O administrador concede ou revoga tela a tela, pessoa a pessoa, e ninguém altera o próprio acesso: a mudança pede outro administrador e fica na trilha com o nome de quem a fez.</p>
+          </li>
+          <li class="vit-clausula">
+            <h3>A conta aparece inteira</h3>
+            <p>Na Conformidade, o requisito que ninguém avaliou conta contra a aderência, sempre mostrada ao lado da cobertura. Na Matriz RAS, a metodologia abre cada conta com os números da empresa, e risco sem nenhum controle medido fica com o residual igual ao inerente.</p>
+          </li>
+          <li class="vit-clausula">
+            <h3>Histórico preservado</h3>
+            <p>O período fechado no Controle de Regras trava, e reabrir fica na trilha com quem tinha fechado e quando. O que se remove de uma norma ou de um plano de ação sai da conta e continua no histórico, com o nome de quem tirou.</p>
+          </li>
+        </ol>
+        <p class="vit-nota">Com o GRC vêm catálogos para a área se avaliar contra a <strong>Resolução CMN nº 4.893/2021</strong>, o recorte de segurança da <strong>LGPD</strong>, a <strong>ISO/IEC 27001:2022</strong> (Anexo A), o <strong>NIST CSF 2.0</strong> e os <strong>CIS Controls v8.1</strong>. Eles não certificam a plataforma.</p>
+      </div>
+    </div>
+  </section>
+  <section class="vit-secao vit-numerada" id="contratacao" aria-labelledby="tit-contratacao">
+    <div class="vit-caixa vit-secao-grade">
+      <div class="vit-trilho">
+        <div class="vit-trilho-fixo">
+          <p class="vit-num" aria-hidden="true"></p>
+          <h2 class="vit-h2" id="tit-contratacao">O que se contrata</h2>
+          <p class="vit-sub">Os módulos se somam ao núcleo. O que ficou fora do contrato sai do menu e não abre pelo endereço.</p>
+        </div>
+      </div>
+      <div class="vit-corpo">
+        <ul class="vit-modulos">
+          <li class="vit-modulo">
+            <h3>CISO</h3>
+            <p>A Matriz RAS, o painel executivo, os painéis de vulnerabilidades, chamados e metas, o Orçamento ligado aos controles e as fichas de avaliação de produto (FAP). É o que o CISO leva à diretoria.</p>
+          </li>
+          <li class="vit-modulo">
+            <h3>Operacional</h3>
+            <p>Incidentes, o ciclo de vida do acesso no diretório (admissão, afastamento, transferência e desligamento), Governança de DLP, homologação de software e IA, automações e a biblioteca de comandos.</p>
+          </li>
+          <li class="vit-modulo">
+            <h3>Ferramentas</h3>
+            <p>Certificados da emissão ao aviso de vencimento, com a CA da própria empresa e conversor de formatos. Domínios com aviso antes de expirar e criptografia que registra o uso sem guardar o conteúdo.</p>
+          </li>
+          <li class="vit-modulo">
+            <h3>Codex</h3>
+            <p>Pentest do relatório ao reteste, com painel próprio: CVSS recalculado do vetor, prazo por severidade, recorrência, aceite de risco pela gestão e a cobertura do alvo nunca testado.</p>
+          </li>
+          <li class="vit-modulo">
+            <h3>Gestão de Equipe</h3>
+            <p>O espaço do gestor sobre o próprio time, com apontamentos, ciclos de avaliação, carreira e entregas do quadro. Nenhum papel abre a tela, nem o de administrador; entra quem recebe acesso nominal.</p>
+          </li>
+          <li class="vit-modulo">
+            <h3>GRC</h3>
+            <p>Conformidade com evidência e validade por requisito, planos de ação, controle de regras, fornecedores com questionário por link, políticas com ciência por versão e registro de riscos.</p>
+          </li>
+        </ul>
+        <div class="vit-nucleo">
+          <h3>Núcleo</h3>
+          <p>Vem em todo contrato e não se desliga: Início, metas, tarefas, atalhos para as ferramentas da área, a autoavaliação de controles (CSA), a trilha de Auditoria e as Configurações da empresa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="vit-secao vit-gauntlet-secao" id="gauntlet" aria-labelledby="tit-gauntlet">
+    <div class="vit-caixa vit-secao-grade">
+      <div class="vit-trilho">
+        <div class="vit-trilho-fixo">
+          <h2 class="vit-h2 vit-h2-marca" id="tit-gauntlet">Gauntlet</h2>
+          <p class="vit-sub">Exercício de crise cibernética</p>
+          <p class="vit-gauntlet-nota">Produto separado do VANT, com contratação própria.</p>
+        </div>
+      </div>
+      <div class="vit-corpo">
+        <div class="vit-gauntlet">
+          <p class="vit-gauntlet-txt">A equipe enfrenta um incidente simulado numa mesa conduzida por um mestre, com o cenário na TV da sala e um dossiê com papel e missão para cada participante. As decisões consomem minutos do relógio e podem somar prejuízo, e a nota final desconta os dois. No fim, o debriefing mostra o roteiro com os caminhos que cada fase oferecia.</p>
+          <figure class="vit-roteiro" role="img" aria-label="Roteiro de um exercício: três fases com caminhos alternativos, o caminho escolhido pela equipe em destaque, terminando no debriefing.">
+            <svg viewBox="0 0 640 132" aria-hidden="true" focusable="false">
+              <g class="vit-roteiro-alternativa">
+                <path d="M14 66 C 110 66, 120 26, 216 26"/>
+                <path d="M216 26 C 312 26, 322 18, 418 18"/>
+                <path d="M216 26 C 312 26, 322 66, 418 66"/>
+                <path d="M216 106 C 312 106, 322 114, 418 114"/>
+                <path d="M418 18 C 514 18, 530 66, 626 66"/>
+                <path d="M418 114 C 514 114, 530 66, 626 66"/>
+              </g>
+              <g class="vit-roteiro-escolha">
+                <path d="M14 66 C 110 66, 120 106, 216 106"/>
+                <path d="M216 106 C 312 106, 322 66, 418 66"/>
+                <path d="M418 66 L 626 66"/>
+              </g>
+              <g class="vit-roteiro-no-vazio">
+                <circle cx="216" cy="26" r="5"/>
+                <circle cx="418" cy="18" r="5"/>
+                <circle cx="418" cy="114" r="5"/>
+              </g>
+              <g class="vit-roteiro-no">
+                <circle cx="14" cy="66" r="6"/>
+                <circle cx="216" cy="106" r="6"/>
+                <circle cx="418" cy="66" r="6"/>
+              </g>
+              <rect class="vit-roteiro-fim" x="618" y="58" width="16" height="16"/>
+            </svg>
+            <ol class="vit-roteiro-fases" aria-hidden="true">
+              <li>Fase 1</li><li>Fase 2</li><li>Fase 3</li><li>Debriefing</li>
+            </ol>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="vit-rodape">
+  <div class="vit-caixa vit-rodape-int">
+    <div class="vit-rodape-firma">
+      <div class="vit-rodape-marca">
+        <img src="static/img/cognirisk-mark-dark.png?v=da2c6528" alt="" width="256" height="256">
+        <strong>CogniRisk</strong>
+      </div>
+      <span class="vit-rodape-papel">Faz o VANT e o Gauntlet.</span>
+    </div>
+    <a class="vit-botao vit-botao-rodape" href="#vant">Conhecer o VANT</a>
+  </div>
+</footer>
+</body>
+</html>
