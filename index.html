@@ -221,6 +221,58 @@
       </div>
     </div>
   </section>
+  <!--
+    Brain — o assistente de IA da CogniRisk embutido no portal. Balão no canto
+    que tira dúvida sem a pessoa sair da tela. Aparece só quando a IA está no ar.
+    Respeita o acesso de quem pergunta (por empresa e por tela) e mascara dado
+    pessoal. As cores do exemplo saem das variáveis da marca (--accent = bordô).
+  -->
+  <section class="vit-secao vit-numerada" id="brain" aria-labelledby="tit-brain">
+    <div class="vit-caixa vit-secao-grade">
+      <div class="vit-trilho">
+        <div class="vit-trilho-fixo">
+          <p class="vit-num" aria-hidden="true"></p>
+          <h2 class="vit-h2 vit-h2-marca" id="tit-brain">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:34px;height:34px;color:var(--accent);flex:none" aria-hidden="true"><path d="M9.5 3A2.5 2.5 0 0 1 12 5.5v13A2.5 2.5 0 0 1 7 18.5 2.5 2.5 0 0 1 4.8 15 2.5 2.5 0 0 1 4 10.5 2.5 2.5 0 0 1 6 6a2.5 2.5 0 0 1 3.5-3z"/><path d="M14.5 3A2.5 2.5 0 0 0 12 5.5v13a2.5 2.5 0 0 0 5-.5 2.5 2.5 0 0 0 2.2-3.5A2.5 2.5 0 0 0 20 10.5 2.5 2.5 0 0 0 18 6a2.5 2.5 0 0 0-3.5-3z"/></svg>
+            Brain
+          </h2>
+          <p class="vit-sub">O assistente que ajuda, sem a pessoa sair da tela</p>
+          <div class="vit-cartao" role="img"
+               aria-label="Exemplo de conversa com o Brain: o analista pergunta como classificar a severidade de um incidente e o assistente responde a partir da base de segurança, citando os campos da ficha de Incidentes do VANT.">
+            <div class="vit-cartao-cab"><span class="vit-rotulo">Brain</span><span class="vit-mono">apoio ao analista</span></div>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">
+              <p style="align-self:flex-end;max-width:85%;margin:0;padding:8px 11px;border-radius:13px 13px 4px 13px;background:var(--accent);color:var(--accent-ink);font-size:.86rem;line-height:1.45">Como classifico a severidade de um incidente?</p>
+              <p style="align-self:flex-start;max-width:92%;margin:0;padding:8px 11px;border-radius:13px 13px 13px 4px;background:var(--surface-3);color:var(--ink);border:1px solid var(--line);font-size:.86rem;line-height:1.45">Pelo tipo de dado exposto e o impacto no negócio. A ficha de Incidentes registra severidade, natureza dos dados e causa raiz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vit-corpo">
+        <ol class="vit-livro">
+          <li class="vit-livro-item">
+            <h3>Ajuda sem trocar de tela</h3>
+            <p>Um balão no canto do portal. O analista pergunta em linguagem comum e continua no que estava fazendo: a resposta vem ali, sem abrir outro sistema nem perder o contexto da tela.</p>
+          </li>
+          <li class="vit-livro-item">
+            <h3>Só enxerga o que a pessoa enxerga</h3>
+            <p>O assistente respeita o acesso de quem pergunta, por empresa e por tela. Não cruza dados entre empresas nem revela o que a pessoa não poderia abrir no portal — a mesma regra que sustenta o resto da plataforma.</p>
+          </li>
+          <li class="vit-livro-item">
+            <h3>Responde do que sabe, e avisa quando não sabe</h3>
+            <p>Trabalha sobre uma base de conhecimento de segurança e fraude, separada por público e isolada entre os perfis. Quando a pergunta foge do que tem base, diz que não sabe em vez de inventar uma resposta.</p>
+          </li>
+          <li class="vit-livro-item">
+            <h3>Dado pessoal protegido</h3>
+            <p>Mascara CPF, e-mail e afins antes de processar, com salvaguardas contra pedidos disfarçados. Pode rodar com um modelo local, sem enviar o conteúdo da conversa para fora da empresa.</p>
+          </li>
+          <li class="vit-livro-item">
+            <h3>Aparece só quando está no ar</h3>
+            <p>É opcional, ligado por contrato. Com a IA ativa, o ícone surge no canto inferior; desligada, não aparece nada e a tela segue intacta. Nunca se impõe sobre o portal.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
   <section class="vit-faixa vit-numerada" id="prova" aria-labelledby="tit-prova">
     <div class="vit-caixa vit-secao-grade">
       <div class="vit-trilho">
