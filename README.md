@@ -15,3 +15,10 @@ sem dependência — o GitHub Pages serve como está.
 
 O `.nojekyll` faz o GitHub Pages servir os arquivos como estão, sem passar
 pelo Jekyll.
+
+## Domínio
+
+O site responde em `cognirisk.com.br`. O arquivo `CNAME` diz isso ao GitHub
+Pages — **ele não pode sumir** numa atualização, senão o domínio se desliga do
+site. O certificado HTTPS é emitido pelo próprio GitHub Pages (Let's Encrypt)
+e não vai na pasta.
